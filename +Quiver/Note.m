@@ -68,7 +68,7 @@ classdef Note < handle
         function appendFigure(note, varargin)
             % append a specific template for a matlab figure using 
             % matlab-save-figure
-            % Usage: appendFigure(note, [figh=gcf], varargin)
+            % Usage: appendFigure([figh=gcf], varargin)
             
             p = inputParser();
             p.addOptional('figh', gcf, @ishandle);

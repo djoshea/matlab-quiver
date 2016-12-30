@@ -12,6 +12,9 @@ classdef Library < handle
         
     methods
         function lib = Library(libPath)
+            if nargin < 1
+                libPath = getenv('QUIVER_LIBRARY');
+            end
             libPath = Quiver.Utils.GetFullPath(libPath);
             assert(exist(libPath, 'dir') > 0, 'Library path not found');
             [~, lib.name, ext] = fileparts(libPath);
